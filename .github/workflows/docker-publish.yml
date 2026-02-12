@@ -37,11 +37,11 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            docker pull ${{ secrets.DOCKERHUB_IMAGES_NAME }}/demo-django-notes-app:${{ github.run_number }}
-            docker stop demo-django-notes-app || true
-            docker rm demo-django-notes-app || true
-            docker run -d \
-              --restart unless-stopped \
-              -p 3000:3000 \
-              --name demo-django-notes-app \
-              ${{ secrets.DOCKERHUB_IMAGES_NAME }}/demo-django-notes-app:${{ github.run_number }}
+            sudo docker pull ${{ secrets.DOCKERHUB_IMAGES_NAME }}/demo-django-notes-app:${{ github.run_number }}
+            sudo docker stop demo-django-notes-app || true
+            sudo docker rm demo-django-notes-app || true
+            sudo docker run -d \
+                --restart unless-stopped \
+                -p 3000:3000 \
+                --name demo-django-notes-app \
+                ${{ secrets.DOCKERHUB_IMAGES_NAME }}/demo-django-notes-app:${{ github.run_number }}  
