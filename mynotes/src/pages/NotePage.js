@@ -43,7 +43,7 @@ const NotePage = () => {
       method: 'DELETE'
     })
     navigate('/')
-  }
+  }   
 
   let handleSubmit = () => {
     if (id !== 'new' && !note.body) {
