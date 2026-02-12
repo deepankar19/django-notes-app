@@ -42,6 +42,6 @@ jobs:
             sudo docker rm demo-django-notes-app || true
             sudo docker run -d \
                 --restart unless-stopped \
-                -p 3000:3000 \
+                -p 80:80 \
                 --name demo-django-notes-app \
                 ${{ secrets.DOCKERHUB_IMAGES_NAME }}/demo-django-notes-app:${{ github.run_number }}  
