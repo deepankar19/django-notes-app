@@ -6,11 +6,12 @@ metadata:
   labels:
     app: django-notes
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: django-notes
   ports:
   - name: http
     port: 80
     targetPort: 8000
+    nodePort: 30007
     protocol: TCP
