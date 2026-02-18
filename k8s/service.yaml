@@ -3,15 +3,10 @@ kind: Service
 metadata:
   name: django-notes-service
   namespace: learndev
-  labels:
-    app: django-notes
 spec:
-  type: NodePort
+  type: ClusterIP # change this
   selector:
     app: django-notes
   ports:
-  - name: http
-    port: 80
+  - port: 80
     targetPort: 8000
-    nodePort: 30008
-    protocol: TCP
