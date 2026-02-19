@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: django-notes
-        image: devilvires/django-notes:latest
+        image: DOCKER_USERNAME/django-notes:latest
         ports:
         - containerPort: 8000
           protocol: TCP
